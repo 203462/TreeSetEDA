@@ -32,16 +32,18 @@ public class Main {
                     arbol.verAlumnoCalificacion(treeset, calificacion);
                     break;
                 case 6:
+                    boolean validar = false;
                     int matricula;
                     do {
                         System.out.println("Ingrese los tres primeros digitos de la matricula: ");
                         matricula = entrada.nextInt();
-                    } while (matricula < 99 || matricula > 1000);
+                        validar = validar(matricula);
+                    } while (validar != true);
+                    matricula = matricula * 1000;
                     arbol.verAlumnoMatricula(treeset, matricula);
                     break;
             }
         } while (opc != 7);
-
     }
 
     public static Alumno datosDeAlumno() {
@@ -52,4 +54,15 @@ public class Main {
         return alumno;
     }
 
+    public static boolean validar(int matricula) {
+        boolean validar = true;
+        if (matricula < 99 || matricula > 1000) {
+            System.out.println("Ingrese los digitos que se solicitan");
+            validar = false;
+        }
+        return validar;
+    }
 }
+
+// 203462 - Bautista Ramírez Alfredo
+// 203426 - Steven Padilla Gutierrez
