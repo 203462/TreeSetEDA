@@ -58,9 +58,10 @@ public class Arbol {
     }
 
     public void verAlumnoCalificacion(TreeSet<Alumno> treeset, int calificacionBuscar) {
+        String[] datosAlumno = new String[2];
         System.out.println("Matricula | Calificacion");
         for (Iterator<Alumno> iterador = treeset.iterator(); iterador.hasNext();) {
-            String datosAlumno[] = iterador.next().toString().split(" ");
+            datosAlumno = iterador.next().toString().split(" ");
             int calificacionAlumno = Integer.parseInt(datosAlumno[1]);
             if (calificacionAlumno <= calificacionBuscar) {
                 System.out.println(datosAlumno[0] + "\t\t" + datosAlumno[1]);
@@ -70,9 +71,10 @@ public class Arbol {
     }
 
     public void verAlumnoMatricula(TreeSet<Alumno> treeset, int matricula) {
+        String[] datosAlumno = new String[2];
         System.out.println("Matricula | Calificacion");
         for (Iterator<Alumno> iterador = treeset.iterator(); iterador.hasNext();) {
-            String datosAlumno[] = iterador.next().toString().split(" ");
+            datosAlumno = iterador.next().toString().split(" ");
             int matriculaAlumno = Integer.parseInt(datosAlumno[0]);
             if (matriculaAlumno >= matricula) {
                 System.out.println(datosAlumno[0] + "\t\t" + datosAlumno[1]);
